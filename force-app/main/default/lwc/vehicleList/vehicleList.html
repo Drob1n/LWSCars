@@ -1,0 +1,14 @@
+<template>
+	<lightning-card variant="narrow" icon-name="standard:opportunity">
+        <h1 slot="title">Vehicles</h1>
+
+		<ul class = "slds-m-around-medium">
+           <template for:each={vehicle.data} for:item="vehicle">
+              <a key={vehicle.id}>{vehicle.Name}</a>
+		   </template>
+			</ul>
+
+
+		</lightning-card>
+
+</template>
