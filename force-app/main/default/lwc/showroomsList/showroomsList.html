@@ -4,8 +4,7 @@
 
 		<ul class = "slds-m-around-medium">
            <template for:each={showrooms.data} for:item="showroom">
-              <a key={showroom.id} 
-			  href={showroom.url} target="_blank" preview= "{showroom.value}">{showroom.Name}</a>
+              <a key={showroom.id} >{showroom.Name}</a>
 		   </template>
 			</ul>
 

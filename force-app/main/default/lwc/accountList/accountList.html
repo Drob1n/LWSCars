@@ -9,29 +9,9 @@
         </div> -->
         <div slot="footer">
             <template for:each={accounts.data} for:item="account">
-                <a key={account.Id} class="slds-card__footer-action" data-refid="recordId" data-special-link="true" title="Used Cars" data-navigable="true"
-                target="_blank" data-recordid="0017Q00000U76RBQAZ" 
-                href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/r/Account/0017Q00000U76RBQAZ/view"> Used Cars </a>
+                <a key={account.Id} class="slds-card__footer-action" data-refid="recordId" data-special-link="true"  
+                > {account.Name} </a>
             </template>
-
-            <template for:each={accounts.data} for:item="account">
-                <a key={account.Id} class="slds-card__footer-action" data-refid="recordId" data-special-link="true" title="Used Cars" data-navigable="true"
-                target="_blank" data-recordid="0017Q00000U76RQQAZ" 
-                href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/r/Account/0017Q00000U76RQQAZ/view"> VIP cars </a>
-            </template>
-
-            <template for:each={accounts.data} for:item="account">
-                <a key={account.Id} class="slds-card__footer-action" data-refid="recordId" data-special-link="true" title="Used Cars" data-navigable="true"
-                target="_blank" data-recordid="0017Q00000U76RaQAJ" 
-                href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/r/Account/0017Q00000U76RaQAJ/view"> Innovation cars </a>
-            </template>
-
-            <template for:each={accounts.data} for:item="account">
-                <a key={account.Id} class="slds-card__footer-action"  data-refid="recordId" data-special-link="true" title="Used Cars" data-navigable="true"
-                target="_blank" data-recordid="0017Q00000U76RGQAZ" 
-                href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/r/Account/0017Q00000U76RGQAZ/view"> Electric motor </a>
-            </template>
-        
         
             <a class="slds-card__footer-action" href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/o/Account/list?filterName=00B7Q00000Nzey5UAB"
                 >View All
