@@ -4,7 +4,7 @@ public with sharing class AccountController {
     public static List <Account> getAllAccounts(){
 
         List<Account> acclist =[SELECT ID, Name 
-        FROM Account];
+        FROM Account WHERE Phone = null];
 
         return acclist;
     }
