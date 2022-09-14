@@ -1,14 +1,15 @@
+
+
+
 <template>
-	<lightning-card variant="narrow" icon-name="standard:opportunity">
+    <lightning-card variant="narrow" icon-name="standard:opportunity">
         <h1 slot="title">Showrooms</h1>
+        <div slot="footer">
+            <template for:each={showrooms.data} for:item="showroom">
+                <a key={showroom.Id} class="slds-card__footer-action" 
+                > {showrooms.Name} </a>
+            </template>
+        </div>
 
-		<ul class = "slds-m-around-medium">
-           <template for:each={showrooms.data} for:item="showroom">
-              <a key={showroom.id} >{showroom.Name}</a>
-		   </template>
-			</ul>
-
-
-		</lightning-card>
-
-</template>
+    </lightning-card>
+</template> 
