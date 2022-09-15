@@ -1,0 +1,6 @@
+.account-tile {
+	display: block;
+	border: 5px solid #8f98f9;
+	border-radius: .35rem;
+	background-color: #d2d8ed;
+}

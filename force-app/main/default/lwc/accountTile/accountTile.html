@@ -1,0 +1,14 @@
+<template>
+	<lightning-card title={account.Name} class="account-tile">
+		<div class="slds-var-p-horizontal_small" onclick={handleOpenRecordClick}>
+			<div class="slds-media">
+				<div class="slds-media__body" >
+					<p class="slds-var-m-bottom_xx-small">{account.Industry}</p>
+					<p class="slds-var-m-bottom_xx-small">{account.ShippingAddress}</p>
+					<p class="slds-var-m-bottom_xx-small">{account.Type}</p>
+					<p class="slds-var-m-bottom_xx-small">{account.Site}</p>
+				</div>
+			</div>
+		</div>
+	</lightning-card>
+</template>

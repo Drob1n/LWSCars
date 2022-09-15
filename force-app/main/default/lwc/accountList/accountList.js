@@ -1,22 +1,43 @@
-import { LightningElement, wire} from 'lwc';
+import { LightningElement} from 'lwc';
 import getAllAccounts from '@salesforce/apex/AccountController.getAllAccounts';
-import getAllRelatedShowrooms from '@salesforce/apex/ShowroomController.getAllRelatedShowrooms';
 
 export default class AccountList extends LightningElement {
-    @wire(getAllAccounts)
     accounts;
+    error;
+    connectedCallback() {
+		this.loadAccounts();
+	}
+	loadAccounts() {
+		getAllAccounts()
+			.then(result => {
+				this.accounts = result;
+			})
+			.catch(error => {
+				this.error = error;
+			});
+    }}
 
-getAllRelatedShowrooms;
-handleGetShowrooms(){
-this.template.getAllRelatedShowrooms ('c-c/showroomsList').getAllRelatedShowrooms();
-}
-}
+    // handleOpenRecordClick() {
+    //     const selectEvent = new CustomEvent('accountview', {
+    //         detail: this.account.Id
+    //     });
+    //     this.dispatchEvent(selectEvent);
+    // }
+
+    // handleAccountView(event) {
+	// 	// Get account record id from bearview event
+	// 	const accountId = event.detail;
+	// 	// Navigate to account record page
+	// 	this[NavigationMixin.Navigate]({
+	// 		type: 'standard__recordPage',
+	// 		attributes: {
+	// 			recordId: accountId,
+	// 			objectApiName: 'Account',
+	// 			actionName: 'view',
+	// 		},
+	// 	});
 
 
+    
 
 
-
-// accounts.addEventListener('account.Name', myFunction);
-// function myFunction(){
-//     getAllRelatedShowrooms;
-// }

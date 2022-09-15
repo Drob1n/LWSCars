@@ -1,23 +1,29 @@
-      
- <template>
-    <lightning-card variant="narrow" icon-name="standard:opportunity">
-        <h1 slot="title">Accounts</h1>
-        <div slot="footer">
-            <template for:each={accounts.data} for:item="account">
-                <a key={account.Id} class="slds-card__footer-action"  onclick={handleGetShowrooms}
-                >{account.Name} </a>
-            </template>
-            <c-showrooms-list 
-            showroomslist ={getAllRelatedShowrooms}
-            ></c-showrooms-list>
-      
-        
-            <a class="slds-card__footer-action" href="https://wise-moose-v2ezd-dev-ed.lightning.force.com/lightning/o/Account/list?filterName=00B7Q00000Nzey5UAB"
-                >View All
-                <span class="slds-assistive-text">Accounts</span>
-            </a>
-        </div>
+<template>
+    <lightning-card title="Accounts" icon-name="standard:account" alternative-text="Account">
+      <div class="slds-card__body slds-card__body_inner">
+            <!-- Start account list -->
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+            <template for:each={accounts} for:item="account">
+              <lightning-layout-item key={account.Id} size="3" class="slds-var-p-around_x-small">
+                <lightning-card title={account.Name} class="account-tile">
+                    <div class="slds-var-p-horizontal_small account-tile-body">
+                    <div class="slds-media__body" >
+                        <p class="slds-var-m-bottom_xx-small">Industry: {account.Industry}</p>
+                        <p class="slds-var-m-bottom_xx-small">ShippingAddress: {account.ShippingAddress}</p>
+                        <p class="slds-var-m-bottom_xx-small">Type: {account.Type}</p>
+                        <p class="slds-var-m-bottom_xx-small">Site: {account.Site}</p>
+                    </div>
+                 </div>        
+                </lightning-card> 
+            </lightning-layout-item>
+        </template>
+</lightning-layout>
+            </div>
 
+                 <!-- <c-account-tile account={account} onaccountview={handleAccountView}></c-account-tile>  -->
+   
+
+            <!-- End account list -->
     </lightning-card>
 </template> 
 

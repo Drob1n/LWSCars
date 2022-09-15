@@ -3,13 +3,10 @@ import getAllRelatedShowrooms from '@salesforce/apex/ShowroomController.getAllRe
 export default class ShowroomsList extends LightningElement {
 	@wire(getAllRelatedShowrooms)
     showrooms;
-    @api ShowroomsList = getAllRelatedShowrooms;
+    // paramaters;
 
-    // showrooms = getAllRelatedShowrooms;
 
-    // handleEvent(){
-    //     this.showrooms;
-    // }
+
 		
 	}
 
