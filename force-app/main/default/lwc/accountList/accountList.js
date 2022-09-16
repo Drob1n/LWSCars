@@ -1,6 +1,7 @@
 import { LightningElement} from 'lwc';
 import getAllAccounts from '@salesforce/apex/AccountController.getAllAccounts';
 
+
 export default class AccountList extends LightningElement {
     accounts;
     error;
@@ -15,27 +16,28 @@ export default class AccountList extends LightningElement {
 			.catch(error => {
 				this.error = error;
 			});
-    }}
+    }
 
-    // handleOpenRecordClick() {
-    //     const selectEvent = new CustomEvent('accountview', {
-    //         detail: this.account.Id
-    //     });
-    //     this.dispatchEvent(selectEvent);
-    // }
+	showShowrooms(event){
+		this.isLoading = true;
+		let id = event.currentTarget.dataset.id;
 
-    // handleAccountView(event) {
-	// 	// Get account record id from bearview event
-	// 	const accountId = event.detail;
-	// 	// Navigate to account record page
-	// 	this[NavigationMixin.Navigate]({
-	// 		type: 'standard__recordPage',
-	// 		attributes: {
-	// 			recordId: accountId,
-	// 			objectApiName: 'Account',
-	// 			actionName: 'view',
-	// 		},
-	// 	});
+		getShowrooms({outAccount :id})
+		.then(result => {
+			{this.isShowroomSelected = false};
+
+			if(result.lenght >0){
+				{this.isAccountSelected = true};
+				{this.chosenShowrooms = result};
+				{this.isLoading = false};
+			}
+		})
+	}
+
+
+
+}
+
 
 
     

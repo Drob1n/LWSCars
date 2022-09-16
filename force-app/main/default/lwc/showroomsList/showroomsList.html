@@ -1,15 +1,17 @@
-
-
-
 <template>
-    <lightning-card variant="narrow" icon-name="standard:opportunity">
-        <h1 slot="title">Showrooms</h1>
-        <div slot="footer">
-            <template for:each={showrooms.data} for:item="showroom">
-                <a key={showroom.Id} class="slds-card__footer-action" 
-                > {showrooms.Name} </a>
+    <lightning-card title="Showrooms" icon-name="standard:account" alternative-text="Showroom">
+      <div class="slds-card__body slds-card__body_inner">
+            <template for:each={showrooms} for:item="showroom">
+              <lightning-layout-item key={showroom.Id} size="3" class="slds-var-p-around_x-small">
+                <lightning-button
+                class = "button slds-small-size"
+                data-id ={showroom.id}
+                variant ="brand"
+                label ={showroom.Name}
+                onclick={showVehicles}>
+                </lightning-button>
+              </lightning-layout-item>
             </template>
-        </div>
-
+     </div>
     </lightning-card>
 </template> 
