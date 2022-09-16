@@ -1,6 +1,7 @@
 import { LightningElement, api} from 'lwc';
 import getAllAccounts from '@salesforce/apex/AccountController.getAllAccounts';
 
+
 export default class AccountTile extends LightningElement {
 
     handleOpenRecordClick() {
