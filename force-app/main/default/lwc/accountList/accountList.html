@@ -31,9 +31,9 @@
       </lightning-card>
   </lightning-card>
   <lightning-layout>
-      <template for:each={vehicles.data} for:item="vehicle">
+      <template for:each={vehicles} for:item="vehicle">
           <lightning-layout-item padding="around-small" key={vehicle.Id} size="4">
-              <c-vehicle-list vehicle={vehicle}></c-vehicle-list>
+              <c-vehicle-list event={onVehicleSelection}></c-vehicle-list>
           </lightning-layout-item>
       </template>
   </lightning-layout>
