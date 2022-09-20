@@ -1,14 +1,9 @@
 <template>
-	<lightning-card variant="narrow" icon-name="standard:opportunity">
-        <h1 slot="title">Vehicles</h1>
-
-		<ul class = "slds-m-around-medium">
-           <template for:each={vehicles.data} for:item="vehicle">
-              <a key={vehicle.id}>{vehicle.Name}</a>
-		   </template>
-			</ul>
-
-
-		</lightning-card>
-
+    <lightning-card  title="Vehicle List">
+        <lightning-badge label={vehicle.interest_status} class={vehicle.statusbadge}></lightning-badge>
+        <image>vehicle.photo</image>
+        <p class="slds-var-p-horizontal_small"><b>Vehicle Serial Number: {vehicle.name}</b></p>
+        <p class="slds-var-p-horizontal_small">{vehicle.model}</p>
+        <p class="slds-var-p-horizontal_small">{vehicle.price}</p>
+    </lightning-card>
 </template>
