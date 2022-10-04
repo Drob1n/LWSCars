@@ -3,10 +3,11 @@ public with sharing class AccountController {
     @AuraEnabled(cacheable = true scope = 'global')
     public static List <Account> getAllAccounts(){
 
-        List<Account> acclist =[SELECT ID, Name,  Industry, ShippingAddress, Type, Site
+        List<Account> acclist =[SELECT ID, Name
         FROM Account WHERE Phone = null];
         return acclist;
         }
+        
    
     @AuraEnabled(cacheable=true scope='global' )
     public static List<Showroom__c> getRelatedShowrooms(String accountId){

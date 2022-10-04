@@ -1,5 +1,16 @@
 <template>
-    <lightning-card  title="Vehicle List">
-        <p class="slds-var-p-horizontal_small"><b>Vehicle Serial Number: {vehicle}</b></p>
-    </lightning-card>
+       <lightning-card>         
+         <center><img src={vehicle.Photo__c} height="260" width="260" class="image"/></center>
+         <p class="slds-var-p-horizontal_small"><b>Vehicle Serial Number : {vehicle.Name}</b></p>
+         <p class="slds-var-p-horizontal_small">Brand: {vehicle.Brand__c}</p>
+         <p class="slds-var-p-horizontal_small">Model: {vehicle.Model__c}</p> 
+         <p class="slds-var-p-horizontal_small">Price: <lightning-formatted-number value={vehicle.Price__c} format-style='currency'></lightning-formatted-number></p>
+
+         <!-- button Interested -->
+       <lightning-button-icon-stateful class="slds-var-p-horizontal_small" icon-name="utility:like" selected={likeState} 
+           onclick={handleLikeButtonClick} alternative-text="Interested"></lightning-button-icon-stateful>
+          <!-- button view details -->
+       <lightning-button-icon-stateful class="slds-var-p-horizontal_small" icon-name = "utility:preview"  title ="Details" alternative-text="Details" 
+           onclick = {handleDetailButtonClick}></lightning-button-icon-stateful>
+       </lightning-card>
 </template>

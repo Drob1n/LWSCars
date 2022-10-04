@@ -1,4 +1,5 @@
 <template>
+    <div class="slds-box slds-theme_shade">
   <lightning-card title = "Accounts List">
       <label class="slds-form-element__label" for="select-01">Select Account
       </label>
@@ -6,7 +7,7 @@
           <div class="slds-select_container">
               <select class="slds-select" id="select-01" onchange={onValueSelection}>
                   <option value=" "></option>
-                  <template for:each={accounts.data} for:item="acc">
+                  <template for:each={accounts} for:item="acc">
                       <option key={acc.Id} value={acc.Id}>
                           {acc.Name}
                       </option>
@@ -20,7 +21,7 @@
               <div class="slds-select_container">
                   <select class="slds-select" id="select-02" onchange={onValueSelection2}>
                       <option value=" "> </option>
-                      <template for:each={showrooms.data} for:item="show">
+                      <template for:each={showrooms} for:item="show">
                           <option key={show.Id} value={show.Id}>
                               {show.Name}
                           </option>
@@ -32,13 +33,14 @@
   </lightning-card>
   <lightning-layout>
     <template if:true={vehicles}>
-    <template for:each={vehicles.data} for:item="vehicle">
+    <template for:each={vehicles} for:item="vehicle">
         <lightning-layout-item padding="around-small" key={vehicle.Id} size="4">
             <c-vehicle-list vehicle={vehicle}></c-vehicle-list>
         </lightning-layout-item>    
     </template>
-</template>
+    </template>
 </lightning-layout>
+    </div>
 </template>
 
 
